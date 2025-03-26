@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input {
+  outline: none;
+}
+
+nav {
+  top: 10px;
+  left: 20px;
+  right: 20px;
+  position: fixed;
+  display: flex;
+  justify-content: end;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home {
+  background: rgb(48, 58, 82);
+  background: radial-gradient(circle, rgba(48, 58, 82, 1) 0%, rgba(48, 58, 82, 1) 10%, rgba(30, 38, 56, 1) 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: #fc85ae;
+  color: white;
+  cursor: pointer;
+}
+
+.btn,
+.name {
+  padding: 10px 20px;
+  width: 250px;
+  text-align: center;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #d45280;
+}
+
+.btn:active {
+  transform: scale(1.02);
+}
+
+.name:focus {
+  border: 3px #fc85ae solid;
+}
+
+.name {
+  border: 3px #00000000 solid;
+  transition: border ease 0.2s;
+}
+
+
+
+
+@media (max-width: 500px) {
+  nav {
+    bottom: 10px;
+    top: unset;
+    display: flex;
+    justify-content: center;
+  }
+}
