@@ -2,7 +2,7 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth, getRedirectResult } from 'firebase/auth'
-import { GoogleAuthProvider } from 'firebase/auth'
+//import { GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
     apiKey: "AIzaSyBE1kBNvdEhuauIhzPHPIl98I38JVpTymE",
