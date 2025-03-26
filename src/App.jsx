@@ -90,7 +90,7 @@ function App() {
         <Route path="/" exact element={<Home user={user} />} />
         <Route path="/game" element={<Game />} />
         <Route path="/games" element={<Games games={games} />} />
-        <Route path="/games/:id" element={<GamePage />} />
+        <Route path="/games/:gameid" element={<GamePage games={games} />} />
         <Route
           path="/create-game"
           element={<CreateGame user={user} createGame={createGame} />}
