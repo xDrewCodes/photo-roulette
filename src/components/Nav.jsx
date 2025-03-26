@@ -23,7 +23,7 @@ const Nav = ({ logged, setLogged, user, setUser }) => {
             {
                 !logged && user == null
                     ?
-                    <div className="btn-small" onClick={dispLogin}>Create Account</div>
+                    <div className="btn-small" onClick={dispLogin}>Log In</div>
                     :
                     <div className="align">
                         <div className="btn-small" onClick={() => {

@@ -9,11 +9,24 @@ import { collection, getDocs, addDoc } from "firebase/firestore";
 import CreateGame from "./pages/CreateGame";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import GamePage from "./pages/GamePage";
 
 function App() {
   const [logged, setLogged] = useState(false);
   const [user, setUser] = useState(null);
   const [games, setGames] = useState(null);
+
+  function showToast(msg) {
+    toast(msg, {
+      position: "top-center",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      progress: undefined,
+      theme: "dark"
+    })
+  }
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -39,16 +52,7 @@ function App() {
   const createGame = async (gameName) => {
     if (!logged || !user) {
 
-      toast('You need to be logged in to create games.', {
-        position: "top-center",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        progress: undefined,
-        theme: "dark"
-      });
-
+      showToast('You need to be logged in to create games.')
       return;
     }
 
@@ -71,6 +75,8 @@ function App() {
         setGames([newGame])
       }
 
+      showToast('Successfully created a new game!')
+
     } catch (error) {
       console.error("Error creating game:", error);
     }
@@ -84,6 +90,7 @@ function App() {
         <Route path="/" exact element={<Home user={user} />} />
         <Route path="/game" element={<Game />} />
         <Route path="/games" element={<Games games={games} />} />
+        <Route path="/games/:id" element={<GamePage />} />
         <Route
           path="/create-game"
           element={<CreateGame user={user} createGame={createGame} />}

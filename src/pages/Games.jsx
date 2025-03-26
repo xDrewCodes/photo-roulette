@@ -13,10 +13,16 @@ const Games = ({ games }) => {
             <div className="title title-space">Game Select</div>
             {
                 !games
-                ?
-                <div className="title">No Current Games</div>
-                :
-                games.map((game, i) => (<div className="btn" key={i}>{game.name}</div>))
+                    ?
+                    <div className="title">No Current Games</div>
+                    :
+                    games.map((game, i) => (<div
+                        className="btn"
+                        key={i}
+                        onClick={() => navigate(`/games/${game.id}`)}
+                        >
+                        {game.name}
+                    </div>))
             }
             <div className="btn btn-dark" onClick={() => navigate(-1)}>Back</div>
         </section>

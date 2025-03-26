@@ -21,8 +21,8 @@ const Login = ({ logClose, setLogged, setUser }) => {
         <section className="sec-transp login center">
             <div className="login__card center">
                 <div>
-                    <div className="btn" onClick={googleLog}>Log In With Google</div>
-                    <div className="btn">Log In With Phone</div>
+                    <div className="btn" onClick={googleLog}>Continue With Google</div>
+                    <div className="btn">Continue With Phone</div>
                     <div className="btn" onClick={logClose}>Continue As Guest</div>
                 </div>
                 <div className="btn btn-dark" onClick={logClose}>Close</div>
