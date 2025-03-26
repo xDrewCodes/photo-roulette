@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+html {
+
+  --themeColor: rgb(48, 58, 82);
+  --secondaryColor: #fc85ae;
+  --textColor: white;
+  --tertiaryColor: #574b90;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input {
+  outline: none;
+}
+
+nav {
+  top: 0;
+  left: 20px;
+  right: 20px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  z-index: 4;
+}
+
+section {
+  background: var( --themeColor );
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.home {
+  background: radial-gradient(circle, var( --themeColor ) 0%, var(--themeColor) 10%, rgba(30, 38, 56, 1) 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__title {
+  color: var( --textColor );
+  font-size: 2.5rem;
+  margin-bottom: 48px;
+}
+
+.title {
+  color: var( --textColor );
+  font-size: 1.5rem;
+}
+
+.title-space {
+  margin-bottom: 24px;
+}
+
+.btn {
+  background-color: var( --secondaryColor );
+  color: var( --textColor );
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-dark {
+  background-color: var( --tertiaryColor );
+}
+
+.btn-small {
+  padding: 4px 12px;
+  background-color: var( --secondaryColor );
+  cursor: pointer;
+  border-radius: 5px;
+  color: var( --textColor );
+  text-align: center;
+}
+
+.btn,
+.name {
+  padding: 10px 20px;
+  width: 250px;
+  text-align: center;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn:hover, .btn-small:hover {
+  background-color: var( --secondaryColor );
+}
+
+.btn-dark:hover, .btn-dark.btn-small:hover {
+  background-color: var( --tertiaryColor );
+}
+
+.btn:active, .btn-small:active {
+  transform: scale(1.02);
+}
+
+.name:focus {
+  border: 3px var( --secondaryColor ) solid;
+}
+
+.name {
+  border: 3px #00000000 solid;
+  transition: border ease 0.2s;
+  color: var( --themeColor );
+}
+
+
+
+
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.login__card {
+  height: 600px;
+  width: 400px;
+  background-color: var( --themeColor );
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile__img {
+  border-radius: 100%;
+  height: 45px;
+  width: 45px;
+  margin-left: 12px;
+}
+
+
+
+
+@media (max-width: 500px) {
+  
+  nav {
+    bottom: 10px;
+    top: unset;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .login__card {
+    height: 100vh;
+    width: 100vw;
+  }
+
+}
