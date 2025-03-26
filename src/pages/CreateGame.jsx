@@ -1,16 +1,26 @@
-
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const CreateGame = ({ user }) => {
-
+const CreateGame = ({ user, createGame }) => {
+    const [gameName, setGameName] = useState('')
     let navigate = useNavigate()
 
+    const handleCreateGame = () => {
+        const nameToPass = gameName.trim() || (!!user ? user.displayName + "'s Game" : 'Unnamed Game')
+        createGame(nameToPass)
+    }
+
     return (
-        <section className="center">
+        <section className="sec center">
             <div className="title title-space">Create Game</div>
-            <input className="name" type="text" placeholder={!!user ? user.displayName + "'s Game" : 'Unnamed Game'} />
-            <div className="btn">Create</div>
+            <input
+                className="name"
+                type="text"
+                placeholder={!!user ? user.displayName + "'s Game" : 'Unnamed Game'}
+                value={gameName}
+                onChange={(e) => setGameName(e.target.value)}
+            />
+            <div className="btn" onClick={handleCreateGame}>Create</div>
             <div className="btn btn-dark" onClick={() => navigate(-1)}>Back</div>
         </section>
     )

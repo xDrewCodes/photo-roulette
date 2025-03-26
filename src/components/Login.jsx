@@ -18,7 +18,7 @@ const Login = ({ logClose, setLogged, setUser }) => {
     }
 
     return (
-        <section className="login center">
+        <section className="sec-transp login center">
             <div className="login__card center">
                 <div>
                     <div className="btn" onClick={googleLog}>Log In With Google</div>

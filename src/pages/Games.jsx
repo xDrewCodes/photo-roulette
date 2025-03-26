@@ -9,10 +9,10 @@ const Games = ({ games }) => {
     //function openGame() {}
 
     return (
-        <section className="games center">
+        <section className="sec games center">
             <div className="title title-space">Game Select</div>
             {
-                games == null
+                !games
                 ?
                 <div className="title">No Current Games</div>
                 :
