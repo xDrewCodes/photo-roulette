@@ -6,9 +6,7 @@ const Games = ({ games }) => {
 
     let navigate = useNavigate()
 
-    function openGame() {
-
-    }
+    //function openGame() {}
 
     return (
         <section className="games center">

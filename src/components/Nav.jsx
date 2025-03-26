@@ -30,7 +30,7 @@ const Nav = ({ logged, setLogged, user, setUser }) => {
                             setUser(null)
                             setLogged(false)
                         }}>Log Out</div>
-                        <img src={user && user.photoURL || ""} className="profile__img" />
+                        <img src={(user && user.photoURL) || ""} alt="profile pic" className="profile__img" />
                     </div>
             }
         </nav>

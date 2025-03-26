@@ -3,7 +3,7 @@ import Nav from "./components/Nav";
 import Game from "./pages/Game";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { auth, db } from "./firebase/init";
+import { db } from "./firebase/init";
 import Games from "./pages/Games";
 import { collection, getDocs } from "firebase/firestore";
 import CreateGame from "./pages/CreateGame";
