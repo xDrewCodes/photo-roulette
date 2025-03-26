@@ -15,8 +15,8 @@ const GamePage = ({ games }) => {
         setCurrentGame(game[0])
     }
 
-    useEffect(() => {
-        getGame()
+    useEffect(() => { // eslint-disable-next-line react-hooks/exhaustive-deps
+        getGame() // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []) // eslint-disable-next-line react-hooks/exhaustive-deps
 
     return (
