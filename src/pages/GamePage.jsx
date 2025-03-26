@@ -17,7 +17,7 @@ const GamePage = ({ games }) => {
 
     useEffect(() => {
         getGame()
-    }, [])
+    }, []) /* eslint-disable */
 
     return (
 
