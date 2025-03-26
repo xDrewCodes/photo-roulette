@@ -13,7 +13,8 @@ const Nav = ({ logged, setLogged, user, setUser }) => {
     }
 
     return (
-        <nav>
+        <nav className="align">
+            <div className="title">Photo Roulette.</div>
             {
                 displayLogin &&
                 <Login logClose={dispLogin} setLogged={setLogged} user={user} setUser={setUser} />
@@ -21,14 +22,15 @@ const Nav = ({ logged, setLogged, user, setUser }) => {
             {
                 !logged && user == null
                     ?
-                    <div className="btn" onClick={dispLogin}>Create Account</div>
+                    <div className="btn-small" onClick={dispLogin}>Create Account</div>
                     :
                     <div className="align">
                         <div className="btn-small" onClick={() => {
                             signOut(auth)
                             setUser(null)
-                            }}>Log Out</div>
-                        <img src={ user && user.photoURL || ""} className="profile__img" />
+                            setLogged(false)
+                        }}>Log Out</div>
+                        <img src={user && user.photoURL || ""} className="profile__img" />
                     </div>
             }
         </nav>

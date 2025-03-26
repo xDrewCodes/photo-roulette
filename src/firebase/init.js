@@ -29,5 +29,5 @@ getRedirectResult(auth)
         console.error("Error during redirect result handling:", error)
     });
 
-export const db = getFirestore(app)
+export const db = getFirestore()
 export default app

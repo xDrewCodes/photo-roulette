@@ -9,6 +9,12 @@
 }
 
 html {
+
+  --themeColor: rgb(48, 58, 82);
+  --secondaryColor: #fc85ae;
+  --textColor: white;
+  --tertiaryColor: #574b90;
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -22,16 +28,18 @@ input {
 }
 
 nav {
-  top: 10px;
+  top: 0;
   left: 20px;
   right: 20px;
   position: fixed;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  height: 60px;
   z-index: 4;
 }
 
 section {
+  background: var( --themeColor );
   width: 100%;
   height: 100vh;
   z-index: 2;
@@ -51,8 +59,7 @@ section {
 }
 
 .home {
-  background: rgb(48, 58, 82);
-  background: radial-gradient(circle, rgba(48, 58, 82, 1) 0%, rgba(48, 58, 82, 1) 10%, rgba(30, 38, 56, 1) 100%);
+  background: radial-gradient(circle, var( --themeColor ) 0%, var(--themeColor) 10%, rgba(30, 38, 56, 1) 100%);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -61,23 +68,38 @@ section {
 }
 
 .home__title {
-  color: white;
+  color: var( --textColor );
   font-size: 2.5rem;
   margin-bottom: 48px;
 }
 
+.title {
+  color: var( --textColor );
+  font-size: 1.5rem;
+}
+
+.title-space {
+  margin-bottom: 24px;
+}
+
 .btn {
-  background-color: #fc85ae;
-  color: white;
+  background-color: var( --secondaryColor );
+  color: var( --textColor );
   cursor: pointer;
+  text-align: center;
+}
+
+.btn-dark {
+  background-color: var( --tertiaryColor );
 }
 
 .btn-small {
   padding: 4px 12px;
-  background-color: #fc85ae;
+  background-color: var( --secondaryColor );
   cursor: pointer;
   border-radius: 5px;
-  color: white;
+  color: var( --textColor );
+  text-align: center;
 }
 
 .btn,
@@ -91,7 +113,11 @@ section {
 }
 
 .btn:hover, .btn-small:hover {
-  background-color: #d45280;
+  background-color: var( --secondaryColor );
+}
+
+.btn-dark:hover, .btn-dark.btn-small:hover {
+  background-color: var( --tertiaryColor );
 }
 
 .btn:active, .btn-small:active {
@@ -99,14 +125,17 @@ section {
 }
 
 .name:focus {
-  border: 3px #fc85ae solid;
+  border: 3px var( --secondaryColor ) solid;
 }
 
 .name {
   border: 3px #00000000 solid;
   transition: border ease 0.2s;
-  color: rgb(48, 58, 82);
+  color: var( --themeColor );
 }
+
+
+
 
 .login {
   position: fixed;
@@ -117,7 +146,7 @@ section {
 .login__card {
   height: 600px;
   width: 400px;
-  background-color: rgb(50, 60, 85);
+  background-color: var( --themeColor );
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -126,15 +155,10 @@ section {
 
 .profile__img {
   border-radius: 100%;
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   margin-left: 12px;
 }
-
-.game {
-  background-color: rgb(48, 58, 82);
-}
-
 
 
 
@@ -145,16 +169,12 @@ section {
     bottom: 10px;
     top: unset;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
-  nav div.align {
-    flex-direction: row-reverse;
-  }
-
-  .profile__img {
-    margin-left: 0;
-    margin-right: 10px;
+  .login__card {
+    height: 100vh;
+    width: 100vw;
   }
 
 }
