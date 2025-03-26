@@ -86,6 +86,11 @@ section.sec-transp {
   font-size: 1.5rem;
 }
 
+.para {
+  color: var( --textColor );
+  font-size: 1.1rem;
+}
+
 .title-space {
   margin-bottom: 24px;
 }
@@ -168,6 +173,15 @@ section.sec-transp {
   margin-left: 12px;
 }
 
+
+.game-card {
+  height: 100px;
+  width: fit-content;
+  padding: 16px;
+  margin-bottom: 8px;
+  border: 3px solid var( --secondaryColor );
+  border-radius: 10px;
+}
 
 
 
