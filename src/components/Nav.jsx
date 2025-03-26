@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Login from './Login'
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase/init'
-import { ToastContainer } from 'react-toastify'
 
 const Nav = ({ logged, setLogged, user, setUser }) => {
 
