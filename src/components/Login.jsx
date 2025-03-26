@@ -13,7 +13,6 @@ const Login = ({ logClose, setLogged, setUser }) => {
                 logClose()
                 setLogged(true)
                 setUser(result.user)
-                console.log('log', result.user, 'log')
             }
         })
     }

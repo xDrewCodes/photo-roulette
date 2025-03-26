@@ -1,7 +1,8 @@
 
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+import { browserLocalPersistence, getAuth, getRedirectResult, setPersistence, signInWithRedirect } from 'firebase/auth'
+import { GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
     apiKey: "AIzaSyBE1kBNvdEhuauIhzPHPIl98I38JVpTymE",
@@ -14,5 +15,19 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 export const auth = getAuth()
+getRedirectResult(auth)
+    .then((result) => {
+        if (result) {
+            const cred = GoogleAuthProvider.credentialFromResult(result)
+            const token = cred.accessToken
+            console.log(result.user)
+        } else {
+            console.log("No redirect result available.")
+        }
+    })
+    .catch((error) => {
+        console.error("Error during redirect result handling:", error)
+    });
+
 export const db = getFirestore(app)
 export default app

@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react'
 import Login from './Login'
+import { signOut } from 'firebase/auth'
+import { auth } from '../firebase/init'
 
 const Nav = ({ logged, setLogged, user, setUser }) => {
 
@@ -9,8 +11,6 @@ const Nav = ({ logged, setLogged, user, setUser }) => {
     function dispLogin() {
         setDisplayLogin(!displayLogin)
     }
-
-    console.log(user)
 
     return (
         <nav>
@@ -24,8 +24,11 @@ const Nav = ({ logged, setLogged, user, setUser }) => {
                     <div className="btn" onClick={dispLogin}>Create Account</div>
                     :
                     <div className="align">
-                        <div className="btn-small">Log Out</div>
-                        <img src={user.photoURL} className="profile__img" />
+                        <div className="btn-small" onClick={() => {
+                            signOut(auth)
+                            setUser(null)
+                            }}>Log Out</div>
+                        <img src={ user && user.photoURL || ""} className="profile__img" />
                     </div>
             }
         </nav>
