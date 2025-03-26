@@ -10,7 +10,7 @@
 
 html {
 
-  --themeColor: rgb(48, 58, 82);
+  --mainColor: rgb(48, 58, 82);
   --secondaryColor: #fc85ae;
   --textColor: white;
   --tertiaryColor: #574b90;
@@ -29,17 +29,25 @@ input {
 
 nav {
   top: 0;
-  left: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
   position: fixed;
   display: flex;
   justify-content: space-between;
   height: 60px;
   z-index: 4;
+  max-width: 800px;
 }
 
-section {
-  background: var( --themeColor );
+section.sec {
+  background: var( --mainColor );
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+section.sec-transp {
   width: 100%;
   height: 100vh;
   z-index: 2;
@@ -59,7 +67,7 @@ section {
 }
 
 .home {
-  background: radial-gradient(circle, var( --themeColor ) 0%, var(--themeColor) 10%, rgba(30, 38, 56, 1) 100%);
+  background: radial-gradient(circle, var( --mainColor ) 0%, var(--mainColor) 10%, rgba(30, 38, 56, 1) 100%);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -131,7 +139,7 @@ section {
 .name {
   border: 3px #00000000 solid;
   transition: border ease 0.2s;
-  color: var( --themeColor );
+  color: var( --mainColor );
 }
 
 
@@ -144,9 +152,9 @@ section {
 }
 
 .login__card {
-  height: 600px;
-  width: 400px;
-  background-color: var( --themeColor );
+  height: 400px;
+  width: 350px;
+  background-color: var( --mainColor );
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -166,7 +174,6 @@ section {
 @media (max-width: 500px) {
   
   nav {
-    bottom: 10px;
     top: unset;
     display: flex;
     justify-content: space-evenly;
@@ -175,6 +182,20 @@ section {
   .login__card {
     height: 100vh;
     width: 100vw;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .home__title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 
 }
